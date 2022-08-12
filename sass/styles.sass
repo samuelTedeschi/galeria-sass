@@ -1,2 +1,60 @@
-div 
-    background: pink
+@use 'variables'
+@use 'mixins'
+
+*
+    font-family: 'Poppins', sans-serif
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+body 
+    background-color: variables.$bg-color
+    color: variables.$text-color
+
+    a
+        color: variables.$text-color
+        text-decoration: none
+        transition: .4s
+
+    ul
+        list-style: none
+
+.header 
+    display: flex
+    justify-content: space-between
+    @include mixins.container
+
+    &-brand
+        color: variables.$primary-color
+        font-size: 3rem
+    
+    &-navbar
+
+        ul
+            height: 100%
+            @include mixins.flex-center
+        
+        li
+            margin: 0 1rem
+            text-decoration: uppercaser
+            font-size: .8rem
+        
+            .active 
+                color: variables.$secudary-color
+
+            a 
+                &:hover
+                    color: variables.$secudary-color
+    
+    &-social-media
+
+        ul
+            @include mixins.flex-center
+            height:100%
+
+        li 
+            margin: 0 1rem       
+
+            a
+                &:hover
+                    color: variables.$primary-color
